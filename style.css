@@ -1,89 +1,304 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+* {
+    /* Resetting default browser margins and padding */
+    margin: 0;
+    padding: 0;
+    /* Choosing a clean, readable font */
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+    /* Ensures padding and border are included in the element's total size */
     box-sizing: border-box;
+    /* Smooth transition for hover effects on colors and shadows */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
 
+/* Base Body Styling */
+body {
+    /* Main dark background color */
+    background-color: #1a1a1a; 
+    /* Main light text color for high contrast */
+    color: #eeeeee; 
+    /* Spacing between lines of text for better reading */
+    line-height: 1.6; 
 }
-header{
-    background-color: black;
-    padding: 10px;
-    border-bottom: 10px solid darkgreen;
-    box-shadow: 10px 15px 10px darkgreen;
+
+/* Utility Class for Centering Content */
+.container {
+    /* Max width prevents content from stretching too far on large screens */
+    max-width: 1200px;
+    /* Centers the container horizontally */
+    margin: 0 auto; 
+    /* Horizontal padding to prevent content from touching screen edges */
+    padding: 0 20px;
 }
-.container{
+
+/* ===================================================================
+  HEADER & NAVIGATION STYLES 
+  - The bar at the top with the logo and links.
+=================================================================== 
+*/
+header {
+    /* Slightly lighter dark background than the body */
+    background-color: #262626; 
+    padding: 15px 0;
+    /* Bright green line at the bottom of the header */
+    border-bottom: 3px solid #00cc66; 
+    /* Adds a soft, deep shadow for depth */
+    box-shadow: 0 4px 8px #00cc66;
+    /* Keeps the header fixed at the top when scrolling */
+    position: sticky; 
+    top: 0;
+    /* Ensures the header is on top of other content */
+    z-index: 100; 
+}
+
+.header-content {
+    /* Uses Flexbox to align the logo and navigation horizontally */
     display: flex;
-    justify-content: space-between;
+    /* Puts space between the logo and nav links */
+    justify-content: space-between; 
+    /* Vertically centers items within the header */
+    align-items: center; 
 }
-.logo img{
-    margin: 10px;
+
+/* Logo Image Styling */
+.logo img {
+    height: 50px; 
+    width: auto;
+    /* Rounded corners for the logo */
+    border-radius: 8px; 
+    /* Green border around the logo */
+    border: 2px solid #00cc66; 
+}
+
+/* Navigation Links Styling */
+nav a {
+    /* Spacing between individual links */
+    margin-left: 20px; 
+    /* The primary green color for links */
+    color: #00cc66; 
+    font-size: 1rem;
+    font-weight: 600;
+    /* Removes the default underline from links */
+    text-decoration: none; 
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+
+/* Main Title (H1) Styling */
+h1 {
+    /* Main green title color */
+    color: #00cc66; 
+    text-align: center;
+    padding: 40px 20px 20px; 
+    font-size: 2.5rem; 
+    /* Soft glow for the title text */
+    text-shadow: 0 0 8px rgba(0, 204, 102, 0.5); 
+
+    
+}
+
+/* Section Titles (H2) Styling */
+h2 {
+    /* White text for better hierarchy */
+    color: #eeeeee; 
+    /* Green line underneath the title */
+    border-bottom: 2px solid #00cc66; 
+    padding-bottom: 10px;
+    margin-top: 30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Paragraph and List Containers */
+p, ul {
+    padding: 10px 20px;
+    margin: 0 auto;
+    /* Constrain text width for readability */
+    max-width: 900px; 
+    color: #cccccc; /* Slightly softer text color */
+}
+
+/* Custom Bullet Points */
+ul {
+    /* Remove default bullet style */
+    list-style-type: none; 
+    padding-left: 40px;
+}
+
+li {
+    margin-bottom: 8px;
+    position: relative;
+    /* Adds a green square icon before the list item */
+    padding-left: 25px;
+}
+
+li::before {
+    content: '■'; 
+    color: #00cc66;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* 
+  IMAGE Designing
+
+*/
+img {
+    /* Ensures image does not exceed container width */
+    max-width: 100%; 
     height: auto;
-    width: 10vw;
-    border-radius: 50px;
+    display: block; 
+    margin: 20px auto; 
+  
+    border-radius: 10px; 
+  
+    border: 3px 3px 3px 3px solid #00994d; 
+    /* Subtle shadow */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
-nav{
-    display: flex;
-    justify-content: space-between;
-    
-    
 
+/* Grid for multiple images (used on about.html) */
+.image-grid {
+
+    display: grid;
+    /* Creates columns that fit, with a minimum width of 250px */
+  
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
-nav a{
-    margin: 20px;
-    color: darkgreen;
-    font-size: 25px;
-    
-    text-decoration: none;
-    
+
+.image-grid img {
+    margin: 0; /* Remove vertical margin for images inside the grid */
 }
-h1{
-    color: darkgreen;
-    text-align: center;
-    padding: 20px;
+
+/* 
+  HOME PAGE LAYOUT (Flexbox Structure)
+
+*/
+.up {
+    /* Container uses Flexbox to organize main content blocks */
+    display: flex;
+    /* Allows items to wrap onto the next line on small screens */
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
-.main{
-    width: 80%;
-    max-width: 600px;
+
+.left, .right, .upleft {
+    /* Allows blocks to share space and grow */
+    flex: 1; 
+    /* Minimum width before content wraps */
+    min-width: 300px; 
+    padding: 25px;
+    /* Dark background for the card/panel */
+    background-color: #262626; 
+    margin: 10px;
+    border-radius: 12px;
+    /* Distinctive green strip on the left */
+    border-left: 5px solid #00cc66; 
+    box-shadow: 0 0 20px #00cc66;
+}
+
+/* Highlight the main text inside the panels */
+.left p:first-child, .right p:first-child {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #00cc66;
+    padding-bottom: 5px;
+}
+
+/* ===================================================================
+  CONTACT FORM STYLES 
+
+*/
+.main {
+    /* Container for the contact form to center it */
+    width: 90%;
+    max-width: 500px;
     margin: 50px auto;
-    padding: 20px;
-    background-color: greenyellow;
-    border-radius:10px ;
-    box-shadow: 0 5px 10px grey;
+    padding: 30px;
+    /* Background for the form card */
+    background-color: #262626; 
+    border-radius: 15px;
+    border: 1px solid #00994d;
+    box-shadow: 0 10px 30px  #00994d;
 }
-.main h1{
-    text-align: center;
-     margin-bottom: 20px;
-     color: blueviolet;
+
+.main h1 {
+    color: #00cc66;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    padding: 0; /* Override default H1 padding */
+    text-shadow: none;
 }
+
 form input,
-form textarea{
+form textarea {
     display: block;
     width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: antiquewhite;
-    color: black;
-    }
-    form button{
-          display: block;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #00994d; /* Green border for input fields */
+    border-radius: 8px;
+    /* Very dark input background */
+    background-color: #333333; 
+    color: #eeeeee;
+    font-size: 1rem;
+    /* Allows users to resize the text area vertically */
+    resize: vertical; 
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #999999; 
+}
+
+/* Submit Button Styling */
+form button {
+    display: block;
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
-    background-color: antiquewhite;
-    color: black;
-    cursor: pointer;
-    transition: 0.3s ease;
-    }
-     form button:hover{
-         background-color: green;
-
-    }
-    body{
-        background-image: -webkit-gradient();
-    }
+    border-radius: 8px;
+    /* Solid green button color */
+    background-color: #00cc66; 
+    /* Dark text on green button */
+    color: #1a1a1a; 
+    font-size: 1.1rem;
+    font-weight: bold;
     
+}
 
+
+
+/* ===================================================================
+  FOOTER STYLES 
+=================================================================== 
+*/
+.footer {
+    /* Matches the header background */
+    background-color: #262626; 
+    padding: 15px 20px;
+    text-align: center;
+    /* Green line at the top of the footer */
+    border-top: 3px solid #00994d;
+    margin-top: 50px; 
+}
+
+.footer p {
+    color: #00cc66;
+    font-size: 0.9rem;
+    padding: 0;
+    margin: 0;
+}
 
