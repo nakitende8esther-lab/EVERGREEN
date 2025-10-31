@@ -4,36 +4,46 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact us page</title>
+    <title>Contact Us Page</title>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <div class="container">
-             <div class="logo"><img src="images/LOGO.jpeg" alt="logo">
+        <div class="container header-content">
+             <div class="logo">
+                <img src="images/LOGO.jpeg" alt="Evergreen Project Logo">
             </div>
-        <nav> <a href="home.html">home</a>
-    <a href="about.html">about.us</a>
-    <a href="contact.html">contact</a>
-</nav>
-
-      
-       
+        <nav> 
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        </div>
     </header>
-      </div>
+    
+    <!-- Main Content Area: Contact Form -->
+    <main>
+        <!-- The 'main' class centers the contact form and gives it a dedicated background -->
         <div class="main">
             <h1>CONTACT US</h1>
             <form action="">
-                <input type="text" placeholder="your Name">
-                <input type="email" placeholder="your Email">
-                <textarea placeholder="your Message"></textarea>
-                <button type="submit">send</button>
-
+                <!-- Input field for user's name -->
+                <input type="text" placeholder="Your Name" required>
+                <!-- Input field for user's email -->
+                <input type="email" placeholder="Your Email" required>
+                <!-- Text area for the message (required) -->
+                <textarea placeholder="Your Message" rows="6" required></textarea>
+                <!-- Submit button -->
+                <button type="submit">Send Message</button>
             </form>
-            
         </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2025 Designed by ESTHER | EVERGREEN PROJECT</p>
         </div>
-        <div class="footer">
-            <p>Copyright @ 2025 Designed by ESTHER</p>
-        </div>
+    </footer>
 </body>
 </html>
