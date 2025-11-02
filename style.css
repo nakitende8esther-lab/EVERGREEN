@@ -23,6 +23,7 @@ body {
 
 /* Utility Class for Centering Content */
 .container {
+    display: flex;
     /* Max width prevents content from stretching too far on large screens */
     max-width: 1200px;
     /* Centers the container horizontally */
@@ -160,12 +161,19 @@ img {
     border: 3px 3px 3px 3px solid #00994d; 
     /* Subtle shadow */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+}
+.img1{
+    display: flex;
+}
+.img{
+    display: flex;
 }
 
 /* Grid for multiple images (used on about.html) */
 .image-grid {
 
-    display: grid;
+    display: flex;
     /* Creates columns that fit, with a minimum width of 250px */
   
     gap: 20px;
@@ -175,7 +183,7 @@ img {
 }
 
 .image-grid img {
-    margin: 0; /* Remove vertical margin for images inside the grid */
+    display: flex; /* Remove vertical margin for images inside the grid */
 }
 
 /* 
